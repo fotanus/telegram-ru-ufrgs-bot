@@ -27,18 +27,17 @@ end
 
 Telegram::Bot::Client.run(token) do |bot|
   bot.listen do |message|
-    case message.text
-    when '/ru1'
+    if message.text.include?('ru1')
       bot.api.send_message(chat_id: message.chat.id, text: " #{getMenu(1)}")
-    when '/ru2'
+    elsif message.text.include?('ru2')
       bot.api.send_message(chat_id: message.chat.id, text: " #{getMenu(2)}")
-    when '/ru3'
+    elsif message.text.include?('ru3')
       bot.api.send_message(chat_id: message.chat.id, text: " #{getMenu(3)}")
-    when '/ru4'
+    elsif message.text.include?('ru4')
       bot.api.send_message(chat_id: message.chat.id, text: " #{getMenu(4)}")
-    when '/ru5'
+    elsif message.text.include?('ru5')
       bot.api.send_message(chat_id: message.chat.id, text: " #{getMenu(5)}")
-    when '/ru6'
+    elsif message.text.include?('ru6')
       bot.api.send_message(chat_id: message.chat.id, text: " #{getMenu(6)}")
     else
       bot.api.send_message(chat_id: message.chat.id, text: "/ru1, /ru2, ... /ru6 para ver o menu do RU")
